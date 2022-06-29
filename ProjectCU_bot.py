@@ -1,3 +1,5 @@
+#pip install python-telegram-bot
+#pip install pytelegrambotapi
 import telegram
 from telegram.ext.updater import Updater
 from telegram.update import Update
@@ -8,8 +10,6 @@ from telegram.ext.filters import Filters
 import time
 
 updater = Updater("5421809650:AAFThj4Yr3j2lvGwgmtxdDeIvsJXZ8CyP7w", use_context=True)
-
-#bot = telebot.TeleBot(updater)
 
 
 def start(update: Update, context: CallbackContext):
@@ -104,7 +104,6 @@ updater.dispatcher.add_handler(MessageHandler(Filters.command, unknown))  # Filt
 updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown_text))
 while True:
     try:
-        #bot.polling()
         updater.start_polling()
     except:
         time.sleep(5)
